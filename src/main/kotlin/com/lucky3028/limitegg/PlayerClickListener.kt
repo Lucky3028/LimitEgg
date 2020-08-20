@@ -23,11 +23,10 @@ object PlayerClickListener : Listener {
         if (regions.size < 1) return
 
         for (rg in regions) {
-            // OwnerかMemberならイベントをキャンセルしその場で終了
+            // OwnerかMemberならイベントをキャンセルし終了
             // （isMemberは指定したLocalPlayerがその保護のMemberであるかだけでなくOwnerであるかどうかも調べてくれる）
             if (rg.isMember(wg.wrapPlayer(player))){
                 e.isCancelled = true
-                return
             }
         }
     }
