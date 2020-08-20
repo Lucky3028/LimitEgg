@@ -1,0 +1,4 @@
+name: LimitEgg
+version: @version@
+main: com.lucky3028.limitegg.LimitEgg
+depend: [WorldGuard]
