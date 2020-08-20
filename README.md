@@ -7,7 +7,8 @@ WorldGuardと連携し、自分がOwnerまたはMemberとなっている保護�
 ## 前提プラグイン
 
 * Spigot 1.12.2
-* WorldGuard 6.2
+* WorldEdit 6.1.9
+* WorldGuard 6.2.2
 
 ## ライセンス
 
