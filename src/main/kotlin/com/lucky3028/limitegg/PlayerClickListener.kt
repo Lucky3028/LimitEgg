@@ -21,7 +21,7 @@ object PlayerClickListener : Listener {
         val regions = wg.getRegionManager(player.world).getApplicableRegions(player.location).regions
 
         for (rg in regions) {
-            // 1つでもOwnerまたはMemberである保護があるなら処理を終了
+            // 1つでもOwnerまたはMemberである保護があるなら処理を終了（イベントはキャンセルされない）
             // （isMemberは指定したLocalPlayerがその保護のMemberであるかだけでなくOwnerであるかどうかも調べてくれる）
             if (rg.isMember(wg.wrapPlayer(player))) return
         }
