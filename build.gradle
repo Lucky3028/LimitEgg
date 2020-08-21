@@ -27,7 +27,6 @@ configurations {
 }
 
 repositories {
-    mavenCentral()
     maven {
         name = 'spigotmc-repo'
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
@@ -40,10 +39,10 @@ repositories {
 }
 
 dependencies {
-    compile "org.spigotmc:spigot-api:$spigot_version"
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    embed "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compileOnly "com.sk89q.worldguard:worldguard-legacy:$worldguard_version"
+    implementation "org.spigotmc:spigot-api:$spigot_version"
+    implementation "com.sk89q.worldguard:worldguard-legacy:$worldguard_version"
+
+    embed "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     compile fileTree(dir: "libs", include: "*.jar")
 }
