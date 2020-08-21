@@ -15,10 +15,10 @@ object PlayerClickListener : Listener {
                 && player.inventory.itemInMainHand.type != Material.MONSTER_EGG) return
 
         // dependをplugin.ymlで指定してあるので、WGのインスタンスはnullにならない（はず）
-        val wg = WorldGuardPlugin.inst()
+        val wg = WorldGuardPlugin.inst()!!
 
         // pLayerが今立っている場所の保護を取得
-        val regions = wg.getRegionManager(player.world).getApplicableRegions(player.location).getRegions()
+        val regions = wg.getRegionManager(player.world).getApplicableRegions(player.location).regions
         // 保護がなければ終了
         if (regions.size < 1) return
 
