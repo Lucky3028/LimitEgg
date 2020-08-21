@@ -1,14 +1,14 @@
 # LimitEgg
 
-WorldGuardと連携し、卵またはスポーンエッグの使用に制限をかけることができるMinecraft JE Spigotプラグイン。
+A Minecraft JE Spigot plugin that works with WorldGuard and allows you to limit the use of eggs or spawn eggs.
 
-## Overview
+## Description
 
-WorldGuardと連携し、自分がOwnerまたはMemberとなっている保護の中にいるときのみ、卵またはスポーンエッグを使用することができるように制限をかけることができるプラグインです。
+This is a plugin that works with WorldGuard and allows you to limit the use of eggs or spawn eggs only when you are in the regions of which you are an Owner or Member.
 
-使用用途としては、卵やスポーンエッグを第三者が悪意を持って使用し、サーバーやクライアントに負荷がかかるほどのMobを他人の保護でスポーンさせることを防ぐことができます。
+For example, it can prevent third parties from maliciously using eggs and spawn eggs within your regions and avoid overloading servers or clients.
 
-## Dependencies
+## Requirement
 
 * Spigot 1.12.2
 * WorldGuard 6.2.2
