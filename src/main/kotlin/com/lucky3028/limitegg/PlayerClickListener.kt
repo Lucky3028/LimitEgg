@@ -23,8 +23,7 @@ object PlayerClickListener : Listener {
         if (regions.size < 1) return
 
         for (rg in regions) {
-            // TODO この実装だと、OwnerかMemberである保護とそうではない保護が重なっていたときに後者が先に判定された場合に困る
-            // OwnerかMemberではないならイベントをキャンセルしその場で終了
+            // 1つでもOwnerでもMemberでもない保護があるならイベントをキャンセルしその場で終了
             // （isMemberは指定したLocalPlayerがその保護のMemberであるかだけでなくOwnerであるかどうかも調べてくれる）
             if (!rg.isMember(wg.wrapPlayer(player))){
                 e.isCancelled = true
