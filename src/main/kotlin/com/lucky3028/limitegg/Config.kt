@@ -36,13 +36,11 @@ object Config {
     }
 
     /**
-     * LimitEggが有効化されているワールドなのかどうか
+     * LimitEggが無効化されているワールドなのかどうか
      * @param world 確認する対象のワールド
-     * @return 有効化されているならtrue、無効化されているならfalse。デフォルトは有効化（true）。
+     * @return 無効化されているならtrue、有効化されているならfalse。デフォルトはfalse。
      */
-    fun isLimitEggEnabled(world: World) : Boolean {
-        // config.ymlに記入されているのは「無効化されるワールド」の指定であることに注意
-        val ans = config?.getStringList("LimitEggDisabledWorld")?.contains(world.name) ?: false
-        return !ans
+    fun isLimitEggDisabled(world: World) : Boolean {
+        return config?.getStringList("LimitEggDisabledWorld")?.contains(world.name) ?: false
     }
 }
