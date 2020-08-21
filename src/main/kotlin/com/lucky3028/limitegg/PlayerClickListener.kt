@@ -15,21 +15,18 @@ object PlayerClickListener : Listener {
                 && player.inventory.itemInMainHand.type != Material.MONSTER_EGG) return
 
         // dependをplugin.ymlで指定してあるので、WGのインスタンスはnullにならない（はず）
-        val wg = WorldGuardPlugin.inst()
+        val wg = WorldGuardPlugin.inst()!!
 
         // pLayerが今立っている場所の保護を取得
-        val regions = wg.getRegionManager(player.world).getApplicableRegions(player.location).getRegions()
-        // 保護がなければ終了
-        if (regions.size < 1) return
+        val regions = wg.getRegionManager(player.world).getApplicableRegions(player.location).regions
 
         for (rg in regions) {
-            // TODO この実装だと、OwnerかMemberである保護とそうではない保護が重なっていたときに後者が先に判定された場合に困る
-            // OwnerかMemberではないならイベントをキャンセルしその場で終了
+            // 1つでもOwnerまたはMemberである保護があるなら処理を終了
             // （isMemberは指定したLocalPlayerがその保護のMemberであるかだけでなくOwnerであるかどうかも調べてくれる）
-            if (!rg.isMember(wg.wrapPlayer(player))){
-                e.isCancelled = true
-                return
-            }
+            if (rg.isMember(wg.wrapPlayer(player))) return
         }
+
+        // まとめ：今いる座標に保護がないか、自分がOwnerでもMemberでもない保護が1つでもあればイベントをキャンセルする
+        e.isCancelled = true
     }
 }
