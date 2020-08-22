@@ -14,7 +14,7 @@ class LimitEgg : JavaPlugin() {
     override fun onEnable() {
         instance = this
 
-        getCommand("eggtoggle").executor = ToggleCommand()
+        getCommand("limitegg").executor = ToggleCommand()
 
         Bukkit.getPluginManager().registerEvents(PlayerClickListener, this)
 
