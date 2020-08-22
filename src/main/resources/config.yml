@@ -1,2 +1,3 @@
-LimitEggDisabledWorld:
+# LimitEggを無効化するワールド
+DisabledWorlds:
 #  - world

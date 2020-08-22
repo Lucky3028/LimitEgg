@@ -15,6 +15,7 @@ object PlayerClickListener : Listener {
         // config.ymlで無効化するワールドに指定されているワールドの場合処理を終了（イベントはキャンセルされない）
         if (isWorldDisabled(player.world)) return
 
+        // toggleがtrueならば処理を終了
         if (IgnoreFlag.readIgnoreFlagState(player)) return
 
         if (player.inventory.itemInMainHand.type != Material.EGG
