@@ -15,6 +15,16 @@ class ToggleCommand : CommandExecutor {
 
         val player = sender as Player
 
+        if (args.isNotEmpty() && args[0] == "toggle") {
+            if (player.hasPermission("limitegg.ignoretoggle")) {
+                // TODO toggle
+            } else {
+                player.sendMessage("${ChatColor.RED}このコマンドを実行する権限がありません。")
+            }
+        } else {
+            player.sendMessage("${ChatColor.RED}構文エラーです。")
+        }
+
         return true
     }
 }
