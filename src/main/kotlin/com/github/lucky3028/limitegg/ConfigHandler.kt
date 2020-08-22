@@ -43,4 +43,12 @@ object ConfigHandler {
     fun isWorldDisabled(world: World) : Boolean {
         return config?.getStringList("DisabledWorlds")?.contains(world.name) ?: false
     }
+
+    /**
+     * OPのplayerはLimitEggを無視できるか
+     * @return 無視できるならtrue、できないならfalse。デフォルトはfalse。
+     */
+    fun isOpBypassed() : Boolean {
+        return config?.getBoolean("OpIsBypassed") ?: false
+    }
 }
