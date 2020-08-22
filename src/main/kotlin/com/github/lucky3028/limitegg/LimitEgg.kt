@@ -1,7 +1,7 @@
 package com.github.lucky3028.limitegg
 
-import com.github.lucky3028.limitegg.Config.loadConfig
-import com.github.lucky3028.limitegg.Config.saveDefConfig
+import com.github.lucky3028.limitegg.ConfigHandler.loadConfig
+import com.github.lucky3028.limitegg.ConfigHandler.saveDefConfig
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 

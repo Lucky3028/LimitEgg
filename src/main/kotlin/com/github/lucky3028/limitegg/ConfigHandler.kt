@@ -4,7 +4,7 @@ import org.bukkit.Bukkit
 import org.bukkit.World
 import org.bukkit.configuration.file.FileConfiguration
 
-object Config {
+object ConfigHandler {
     private var config: FileConfiguration? = null
     private val plugin = LimitEgg.instance!!
 
