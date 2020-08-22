@@ -40,7 +40,7 @@ object ConfigHandler {
      * @param world 確認する対象のワールド
      * @return 無効化されているならtrue、有効化されているならfalse。デフォルトはfalse。
      */
-    fun isDisabledWorld(world: World) : Boolean {
+    fun isWorldDisabled(world: World) : Boolean {
         return config?.getStringList("DisabledWorlds")?.contains(world.name) ?: false
     }
 }

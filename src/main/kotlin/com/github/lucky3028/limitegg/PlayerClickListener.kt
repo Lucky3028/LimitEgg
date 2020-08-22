@@ -1,6 +1,6 @@
 package com.github.lucky3028.limitegg
 
-import com.github.lucky3028.limitegg.ConfigHandler.isDisabledWorld
+import com.github.lucky3028.limitegg.ConfigHandler.isWorldDisabled
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin
 import org.bukkit.Material
 import org.bukkit.event.EventHandler
@@ -13,7 +13,7 @@ object PlayerClickListener : Listener {
         val player = e.player
 
         // config.ymlで無効化するワールドに指定されているワールドの場合処理を終了（イベントはキャンセルされない）
-        if (isDisabledWorld(player.world)) return
+        if (isWorldDisabled(player.world)) return
 
         if (player.inventory.itemInMainHand.type != Material.EGG
                 && player.inventory.itemInMainHand.type != Material.MONSTER_EGG) return
