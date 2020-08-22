@@ -11,14 +11,10 @@ class LimitEgg : JavaPlugin() {
             private set
     }
 
-    private val ignoreFlag = IgnoreFlag()
-    private val ignoreFlagManager = ToggleCommand(ignoreFlag)
-
     override fun onEnable() {
         instance = this
 
-        getCommand("limitegg").executor = ignoreFlagManager
-
+        getCommand("limitegg").executor = ToggleCommand()
         Bukkit.getPluginManager().registerEvents(PlayerClickListener, this)
 
         saveDefConfig()

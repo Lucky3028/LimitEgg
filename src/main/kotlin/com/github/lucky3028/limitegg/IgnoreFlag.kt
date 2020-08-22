@@ -3,10 +3,10 @@ package com.github.lucky3028.limitegg
 import org.bukkit.ChatColor
 import org.bukkit.entity.Player
 
-class IgnoreFlag {
+object IgnoreFlag {
     private val ignoreFlagMap: MutableMap<Player, Boolean> = HashMap()
 
-    private fun readIgnoreFlagState(player: Player) = ignoreFlagMap[player] ?: false
+    fun readIgnoreFlagState(player: Player) = ignoreFlagMap[player] ?: false
 
     fun toggleIgnoreFlag(player: Player) {
         val current = readIgnoreFlagState(player)
