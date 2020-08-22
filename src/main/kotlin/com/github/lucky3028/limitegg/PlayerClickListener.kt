@@ -1,6 +1,6 @@
-package com.lucky3028.limitegg
+package com.github.lucky3028.limitegg
 
-import com.lucky3028.limitegg.Config.isLimitEggDisabled
+import com.github.lucky3028.limitegg.Config.isLimitEggDisabled
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin
 import org.bukkit.Material
 import org.bukkit.event.EventHandler

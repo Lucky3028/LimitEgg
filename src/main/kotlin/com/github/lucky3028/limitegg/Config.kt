@@ -1,4 +1,4 @@
-package com.lucky3028.limitegg
+package com.github.lucky3028.limitegg
 
 import org.bukkit.Bukkit
 import org.bukkit.World
