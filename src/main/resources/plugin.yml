@@ -2,3 +2,11 @@ name: LimitEgg
 version: @version@
 main: com.github.lucky3028.limitegg.LimitEgg
 depend: [WorldGuard]
+
+commands:
+  eggtoggle:
+    usage: /eggtoggle
+    description: This is an eggtoggle command of LimitEgg.
+    default: op
+    permission: LimitEgg.eggtoggle
+    permission-message: You don't have <permission>.
