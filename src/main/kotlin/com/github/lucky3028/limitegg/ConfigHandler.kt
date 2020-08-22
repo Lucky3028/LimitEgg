@@ -1,10 +1,10 @@
-package com.lucky3028.limitegg
+package com.github.lucky3028.limitegg
 
 import org.bukkit.Bukkit
 import org.bukkit.World
 import org.bukkit.configuration.file.FileConfiguration
 
-object Config {
+object ConfigHandler {
     private var config: FileConfiguration? = null
     private val plugin = LimitEgg.instance!!
 
@@ -40,7 +40,7 @@ object Config {
      * @param world 確認する対象のワールド
      * @return 無効化されているならtrue、有効化されているならfalse。デフォルトはfalse。
      */
-    fun isLimitEggDisabled(world: World) : Boolean {
-        return config?.getStringList("LimitEggDisabledWorld")?.contains(world.name) ?: false
+    fun isWorldDisabled(world: World) : Boolean {
+        return config?.getStringList("DisabledWorlds")?.contains(world.name) ?: false
     }
 }

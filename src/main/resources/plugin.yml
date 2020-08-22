@@ -1,4 +1,14 @@
 name: LimitEgg
 version: @version@
-main: com.lucky3028.limitegg.LimitEgg
+main: com.github.lucky3028.limitegg.LimitEgg
 depend: [WorldGuard]
+
+commands:
+  limitegg:
+    usage: /limitegg toggle
+    description: This is a limitegg command.
+
+perimissions:
+  limitegg.ignoretoggle:
+    description: This Permission allows a player to ignore the limitation of using eggs and spawn eggs.
+    default: op
