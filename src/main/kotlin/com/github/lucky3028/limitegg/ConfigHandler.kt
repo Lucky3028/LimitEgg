@@ -40,7 +40,7 @@ object ConfigHandler {
      * @param world 確認する対象のワールド
      * @return 無効化されているならtrue、有効化されているならfalse。デフォルトはfalse。
      */
-    fun isLimitEggDisabled(world: World) : Boolean {
-        return config?.getStringList("LimitEggDisabledWorld")?.contains(world.name) ?: false
+    fun isDisabledWorld(world: World) : Boolean {
+        return config?.getStringList("DisabledWorlds")?.contains(world.name) ?: false
     }
 }
