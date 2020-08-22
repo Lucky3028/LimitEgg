@@ -15,4 +15,4 @@ WorldGuardと連携し、自分がOwnerまたはMemberとなっている保護�
 
 ## License
 
-MIT License
+GNU General Public License v3.0
