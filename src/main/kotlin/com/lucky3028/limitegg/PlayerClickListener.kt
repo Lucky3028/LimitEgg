@@ -1,5 +1,6 @@
 package com.lucky3028.limitegg
 
+import com.lucky3028.limitegg.Config.isLimitEggDisabled
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin
 import org.bukkit.Material
 import org.bukkit.event.EventHandler
@@ -10,6 +11,9 @@ object PlayerClickListener : Listener {
     @EventHandler
     fun onEggClicked(e: PlayerInteractEvent) {
         val player = e.player
+
+        // config.ymlで無効化するワールドに指定されているワールドの場合処理を終了（イベントはキャンセルされない）
+        if (isLimitEggDisabled(player.world)) return
 
         if (player.inventory.itemInMainHand.type != Material.EGG
                 && player.inventory.itemInMainHand.type != Material.MONSTER_EGG) return
