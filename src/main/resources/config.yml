@@ -1,7 +1,2 @@
-# LimitEggを無効化するワールド
-DisabledWorlds:
+LimitEggDisabledWorld:
 #  - world
-
-# OPを持っているプレイヤーはこのプラグインの影響を受けるかどうか
-# true or false
-OpIsBypassed: false
