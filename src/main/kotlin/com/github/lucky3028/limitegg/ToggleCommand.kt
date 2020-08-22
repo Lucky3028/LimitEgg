@@ -6,23 +6,21 @@ import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
-class ToggleCommand : CommandExecutor {
+class ToggleCommand(private val ignoreFlag: IgnoreFlag) : CommandExecutor {
     override fun onCommand(sender: CommandSender, cmd: Command, label: String, args: Array<out String>): Boolean {
         if (sender !is Player) {
             sender.sendMessage("${ChatColor.RED}プレイヤーのみ使用できるコマンドです。")
             return false
         }
 
-        val player = sender as Player
-
         if (args.isNotEmpty() && args[0] == "toggle") {
-            if (player.hasPermission("limitegg.ignoretoggle")) {
-                // TODO toggle
+            if (sender.hasPermission("limitegg.ignoretoggle")) {
+                ignoreFlag.toggleIgnoreFlag(sender)
             } else {
-                player.sendMessage("${ChatColor.RED}このコマンドを実行する権限がありません。")
+                sender.sendMessage("${ChatColor.RED}このコマンドを実行する権限がありません。")
             }
         } else {
-            player.sendMessage("${ChatColor.RED}構文エラーです。")
+            sender.sendMessage("${ChatColor.RED}構文エラーです。")
         }
 
         return true
